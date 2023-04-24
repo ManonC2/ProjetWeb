@@ -3,10 +3,12 @@
 namespace Application\Entity;
 
 class Etudiant  {
-    public int $id;
-    public string $numeroEtudiant;
-    public string $nationalite;
-
+    #region Attributs
+    private int $id;
+    private string $numeroEtudiant;
+    private string $nationalite;
+    #endregion
+    
     #region Getters/Setters
     public function getId():?int {
         return $this->id;
