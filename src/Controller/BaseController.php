@@ -3,7 +3,7 @@
 namespace Application\Controller\BaseController;
 
 class BaseController {
-    public function index() {
-        
+    function base() {
+        require('./src/templates/homepage.php');
     }
 }
