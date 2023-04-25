@@ -18,7 +18,8 @@
 <a href="#">Maîtres de stages + note cumulée<br></a>
 <a href="#">Contrôle qualité<br></a>
 
-<?php $content = ob_get_clean(); ?>
+<?php 
+var_dump($etudiant); 
+$content = ob_get_clean(); 
 
-
-<?php require('base.php');?>
+require('base.php');?>

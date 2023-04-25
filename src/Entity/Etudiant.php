@@ -16,7 +16,14 @@ class Etudiant  {
     public function getId():?int {
         return $this->id;
     }
-
+    /**
+     * @param int $id
+     * @return self
+     */
+    public function setId(int $id){
+        $this->id = $id;
+        return $this;
+    }
     /**
      * @return string
      */
