@@ -16,7 +16,6 @@ class ContratLabo {
     #endregion
 
     #region Getters/Setters 
-
     /**
      * @return int
      */

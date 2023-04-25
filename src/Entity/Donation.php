@@ -13,10 +13,6 @@ class Donation {
     #endregion
 
     #region Getters/Setters 
-
-    #endregion
-
-
 	/**
 	 * @return int
 	 */
@@ -80,4 +76,5 @@ class Donation {
 		$this->valeur = $valeur;
 		return $this;
 	}
+    #endregion
 }

@@ -20,10 +20,6 @@ class ContratSA {
     #endregion
 
     #region Getters/Setters 
-
-    #endregion
-
-
 	/**
 	 * @return int
 	 */
@@ -62,7 +58,6 @@ class ContratSA {
 		$this->dateFinAnticipee = $dateFinAnticipee;
 		return $this;
 	}
-
 	/**
 	 * @return DateTime
 	 */
@@ -78,7 +73,6 @@ class ContratSA {
 		$this->dateFinPrevue = $dateFinPrevue;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -94,7 +88,6 @@ class ContratSA {
 		$this->etudiantId = $etudiantId;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -110,14 +103,12 @@ class ContratSA {
 		$this->entrepriseId = $entrepriseId;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
 	public function getSiteId(): int {
 		return $this->siteId;
 	}
-	
 	/**
 	 * @param int $siteId 
 	 * @return self
@@ -126,14 +117,12 @@ class ContratSA {
 		$this->siteId = $siteId;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
 	public function getNoteEntreprise(): int {
 		return $this->noteEntreprise;
 	}
-	
 	/**
 	 * @param int $noteEntreprise 
 	 * @return self
@@ -142,7 +131,6 @@ class ContratSA {
 		$this->noteEntreprise = $noteEntreprise;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -174,7 +162,6 @@ class ContratSA {
 		$this->type = $type;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -190,4 +177,5 @@ class ContratSA {
 		$this->employeId = $employeId;
 		return $this;
 	}
+    #endregion
 }

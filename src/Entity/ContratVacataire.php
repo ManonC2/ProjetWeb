@@ -15,17 +15,12 @@ class ContratVacataire {
     #endregion
 
     #region Getters/Setters 
-
-    #endregion
-
-
 	/**
 	 * @return int
 	 */
 	public function getId(): int {
 		return $this->id;
 	}
-
 	/**
 	 * @return DateTime
 	 */
@@ -41,7 +36,6 @@ class ContratVacataire {
 		$this->dateFin = $dateFin;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -57,7 +51,6 @@ class ContratVacataire {
 		$this->entrepriseId = $entrepriseId;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -73,7 +66,6 @@ class ContratVacataire {
 		$this->note = $note;
 		return $this;
 	}
-
 	/**
 	 * @return int
 	 */
@@ -89,7 +81,6 @@ class ContratVacataire {
 		$this->employeId = $employeId;
 		return $this;
 	}
-
 	/**
 	 * @return DateTime
 	 */
@@ -105,4 +96,5 @@ class ContratVacataire {
 		$this->dateDebut = $dateDebut;
 		return $this;
 	}
+    #endregion
 }
