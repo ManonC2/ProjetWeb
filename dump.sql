@@ -64,6 +64,7 @@ CREATE TABLE
         `dateFinAnticipee` date,
         `etudiant_id` int,
         `employe_id` int,
+        `entreprise_id` int,
         `site_id` int,
         `type` boolean,
         `noteEntr` int,
@@ -71,6 +72,7 @@ CREATE TABLE
         CONSTRAINT `contratsa_pk` PRIMARY KEY (`id`),
         CONSTRAINT `contratsa_fk_etudiant` FOREIGN KEY (`etudiant_id`) REFERENCES `Etudiant` (`id`),
         CONSTRAINT `contratsa_fk_employe` FOREIGN KEY (`employe_id`) REFERENCES `Employe` (`id`),
+        CONSTRAINT `contratsa_fk_entreprise` FOREIGN KEY (`entreprise_id`) REFERENCES `Entreprise`(`id`),
         CONSTRAINT `contratsa_fk_site` FOREIGN KEY (`site_id`) REFERENCES `Site` (`id`)
     );
 
@@ -89,9 +91,11 @@ CREATE TABLE
         `dateDebut` date,
         `dateFin` date,
         `employe_id` int,
+        `entreprise_id` int,
         `note` int,
         CONSTRAINT `contratvacataire_pk` PRIMARY KEY (`id`),
-        CONSTRAINT `contratvacataire_fk_employe` FOREIGN KEY (`employe_id`) REFERENCES `Employe` (`id`)
+        CONSTRAINT `contratvacataire_fk_employe` FOREIGN KEY (`employe_id`) REFERENCES `Employe` (`id`),
+        CONSTRAINT `contratvacataire_fk_entreprise` FOREIGN KEY (`entreprise_id`) REFERENCES `Entreprise`(`id`)
     );
 
 CREATE TABLE
