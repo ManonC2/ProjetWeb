@@ -46,4 +46,13 @@ class EmployeController {
 
         require('./src/templates/employe/employeVac.php');
     }
+
+    function getMANote(){
+        $EmployeRepo = new EmployeRepository();
+        $EmployeRepo->connexion = new DBConnexion();
+
+        $Employes = $EmployeRepo->getEmployeNote();
+
+        require('./src/templates/employe/employeNote.php');
+    }
 }

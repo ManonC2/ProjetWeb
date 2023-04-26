@@ -19,4 +19,13 @@ class EntrepriseController {
 
         require('./src/templates/entreprises/entreprisesBloquees.php');
     }
+
+    function entrepriseAdresse(){
+        $entrepriseRepo = new EntrepriseRepository();
+        $entrepriseRepo->connexion = new DBConnexion();
+
+        $entreprises = $entrepriseRepo->getentrepriseAdresse();
+
+        require('./src/templates/entreprises/entreprisesSieges.php');
+    }
 }

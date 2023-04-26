@@ -76,4 +76,23 @@ class EntrepriseRepository {
         }
         return $employes;
     }
+
+    function getEmployeNote(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT  Employe.nom AS nom, AVG(ContratSA.noteMA) AS noteMOY 
+            FROM ContratSA INNER JOIN Employe ON ContratSA.employe_id = Employe.id WHERE ContratSA.noteMA IS NOT NULL 
+            GROUP BY Employe.id, Employe.nom,YEAR(ContratSA.dateFinPrevue) 
+            ORDER BY YEAR(ContratSA.dateFinPrevue) DESC, Employe.nom ASC;"
+        );
+
+        $employes=[];
+
+        while(($row = $statement->fetch())){
+            $employe = new Employe();
+            $employe->setNom($row['nom']);
+            $employe->setNoteCumul($row['noteMOY']);
+            $employes[] = $employe;
+        }
+        return $employes;
+    }
 }

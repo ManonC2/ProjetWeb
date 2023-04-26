@@ -7,6 +7,7 @@ class Employe {
     private int $id;
     private string $nom;
     private int $entrepriseId;
+	private int $noteCumul;
     #endregion
 
     #region Getters/Setters 
@@ -54,6 +55,22 @@ class Employe {
 	 */
 	public function setId(int $id): self {
 		$this->id = $id;
+		return $this;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getNoteCumul(): int {
+		return $this->noteCumul;
+	}
+
+	/**
+	 * @param int $note
+	 * @return self
+	 */
+	public function setNoteCumul(int $note): self {
+		$this->noteCumul = $note;
 		return $this;
 	}
     #endregion

@@ -32,39 +32,24 @@ class EntrepriseRepository {
         return $entreprises;
     }
 
-    // /**
-    //  * @return array
-    //  */
-    // function getAllStagiaires(){
-    //     $statement = $this->connexion->dbConnect()->query(
-    //         "SELECT id, nationalite, numeroEtudiant FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA WHERE type);
-    //         "
-    //     );
+    function getentrepriseAdresse(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Entreprise.nom AS nom, Site.adresse AS adresse 
+            FROM Entreprise INNER JOIN Site on Entreprise.siege = Site.id;"
+        );
 
-    //     $alternants=[];
+        $entreprises=[];
 
-    //     while(($row = $statement->fetch())){
-    //         $alternant = new Etudiant();
-    //         $alternant->setNationalite($row['nationalite']);
-    //         $alternant->setNumeroEtudiant($row['numeroEtudiant']);
-    //         $alternant->setId($row['id']);
+        while(($row = $statement->fetch())){
+            $entreprise = new Entreprise();
+            $site = new Site();
 
-    //         $alternants[] = $alternant;
-    //     }
-    //     return $alternants;
-    // }
+            $site->setAdresse($row['adresse']);
+            $entreprise->setSite($site);
 
-
-    // function getEtudiant1(){
-    //     $statement = $this->connexion->dbConnect()->prepare("SELECT id, nationalite, numeroEtudiant FROM Etudiant WHERE id = ?");
-    //     $statement->execute([1]);
-    //     $row = $statement->fetch();
-
-    //     $etudiant = new Etudiant();
-    //     $etudiant->setId($row['id']);
-    //     $etudiant->setNationalite($row['nationalite']);
-    //     $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
-
-    //     return $etudiant;
-    // }
+            $entreprise->setNom($row['nom']);
+            $entreprises[] = $entreprise;
+        }
+        return $entreprises;
+    }
 }
