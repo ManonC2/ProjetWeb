@@ -12,7 +12,6 @@ class BaseController {
     function base() {
         $etudiantRepo = new EtudiantRepository();
         $etudiantRepo->connexion = new DBConnexion();
-        // $etudiants = $etudiantRepo->getAllEtudiants();
         $etudiant = $etudiantRepo->getEtudiant1();
 
         require('./src/templates/homepage.php');

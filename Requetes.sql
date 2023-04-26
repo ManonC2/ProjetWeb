@@ -138,11 +138,16 @@ WHERE ContratSA.dateFinAnticipee IS NOT NULL AND Etudiant.id in (
     GROUP BY ContratSA.etudiant_id HAVING COUNT(ContratSA.id)=1
 );
 
+<<<<<<< HEAD
 #15 (Prendre une valeur sur deux)
 CREATE VIEW VueConflitEtudiant2 AS
 SELECT Etudiant.id, Etudiant.numeroEtudiant, YEAR(ContratSA1.dateFinAnticipee) AS AnneeFin1, Entreprise1.nom AS Entr1, YEAR(ContratSA2.dateFinAnticipee) AS AnneeFin2, Entreprise2.nom as Entr2 
 FROM (((ContratSA AS ContratSA1 INNER JOIN Entreprise AS Entreprise1 ON ContratSA1.entreprise_id=Entreprise1.id) INNER JOIN Etudiant ON ContratSA1.etudiant_id=Etudiant.id)INNER JOIN ContratSA AS ContratSA2 ON ContratSA2.etudiant_id = Etudiant.id) INNER JOIN Entreprise AS Entreprise2 ON ContratSA2.entreprise_id = Entreprise2.id 
 WHERE ContratSA1.dateFinAnticipee IS NOT NULL AND ContratSA2.dateFinAnticipee IS NOT NULL AND  ContratSA1.id != ContratSA2.id;   
+=======
+--10
+SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA WHERE type);
+>>>>>>> a75dc936c0eb14495f7b62c617c932ea44595830
 
 #16
 CREATE VIEW VueMdsNote AS

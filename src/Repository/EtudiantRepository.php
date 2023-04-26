@@ -17,35 +17,57 @@ class EtudiantRepository {
     /**
      * @return array
      */
-    function getAllEtudiants(){
+    function getAllAlternants(){
         $statement = $this->connexion->dbConnect()->query(
-            "SELECT * FROM Etudiant"
+            "SELECT id, nationalite, numeroEtudiant FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA WHERE !(type));
+            "
         );
-        $etudiants=[];
+
+        $alternants=[];
 
         while(($row = $statement->fetch())){
-            $etudiant = new Etudiant();
-            $etudiant->setNationalite($row['nationalite']);
-            $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
-            $etudiant->setId($row['id']);
+            $alternant = new Etudiant();
+            $alternant->setNationalite($row['nationalite']);
+            $alternant->setNumeroEtudiant($row['numeroEtudiant']);
+            $alternant->setId($row['id']);
 
-            $etudiants[] = $etudiant;
+            $alternants[] = $alternant;
         }
-        return $etudiants;
+        return $alternants;
     }
 
     /**
-     * @return Etudiant
+     * @return array
      */
+    function getAllStagiaires(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT id, nationalite, numeroEtudiant FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA WHERE type);
+            "
+        );
+
+        $alternants=[];
+
+        while(($row = $statement->fetch())){
+            $alternant = new Etudiant();
+            $alternant->setNationalite($row['nationalite']);
+            $alternant->setNumeroEtudiant($row['numeroEtudiant']);
+            $alternant->setId($row['id']);
+
+            $alternants[] = $alternant;
+        }
+        return $alternants;
+    }
+
+
     function getEtudiant1(){
-        // $statement = $this->connexion->dbConnect()->prepare("SELECT * FROM Etudiant WHERE id = ?");
-        // $statement->execute([1]);
-        // $row = $statement->fetch();
+        $statement = $this->connexion->dbConnect()->prepare("SELECT id, nationalite, numeroEtudiant FROM Etudiant WHERE id = ?");
+        $statement->execute([1]);
+        $row = $statement->fetch();
 
         $etudiant = new Etudiant();
-        $etudiant->setId(1);
-        $etudiant->setNationalite("Fr");
-        $etudiant->setNumeroEtudiant("1");
+        $etudiant->setId($row['id']);
+        $etudiant->setNationalite($row['nationalite']);
+        $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
 
         return $etudiant;
     }
