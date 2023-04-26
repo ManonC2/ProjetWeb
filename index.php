@@ -52,5 +52,9 @@ use Application\Controller\EntrepriseController;
 //Affiche les étudiants avec un contrat terminé 
 //(new EtudiantController)->getEtudiantsTermines();
 
-//Affiche 
+//Affiche les étudiants ayant eu deux contrats avec fin anticipée 
+//(new EtudiantController)->getEtudiantsDeuxAnticipes();
+
+//Affiche les maîtres de stage avec leur note
+//(new EmployeController)->getMANote();
 
