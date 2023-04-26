@@ -9,7 +9,7 @@ class Entreprise {
     private bool $bloque;
     private int $nbEmployes;
     private bool $ouvert;
-    private Site $site;
+    private Site $siege;
     #endregion
 
     #region Getters/Setters 
@@ -53,16 +53,16 @@ class Entreprise {
 	/**
 	 * @return Site
 	 */
-	public function getSite(): Site {
-		return $this->site;
+	public function getSiege(): Site {
+		return $this->siege;
 	}
 	
 	/**
 	 * @param Site $site 
 	 * @return self
 	 */
-	public function setSite(Site $site): self {
-		$this->site = $site;
+	public function setSiege(Site $siege): self {
+		$this->siege = $siege;
 		return $this;
 	}
 	/**

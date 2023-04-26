@@ -34,10 +34,10 @@ SELECT Employe.id, Employe.nom FROM Employe WHERE id IN (SELECT employe_id from 
 --8
 SELECT Employe.id, Employe.nom FROM Employe WHERE id IN (SELECT employe_id from ContratVacataire);
 
---9
+--9 Alternants
 SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA WHERE !(type));
 
---10
+--10 Stagiaires
 SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA WHERE type);
 
 --11

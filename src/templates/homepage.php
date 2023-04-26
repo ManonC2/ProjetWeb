@@ -19,7 +19,6 @@
 <a href="#">Contrôle qualité<br></a>
 
 <?php 
-var_dump($etudiant); 
 $content = ob_get_clean(); 
 
 require('base.php');?>
