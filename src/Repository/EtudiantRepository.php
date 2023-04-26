@@ -60,14 +60,14 @@ class EtudiantRepository {
 
 
     function getAllStagiairesEtAlternants(){
-        $statement = $this->connexion->dbConnect()>query(
+        $statement = $this->connexion->dbConnect()->query(
             "SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA);"
         );
 
         $etudiants=[];
         
         while(($row = $statement->fetch())){
-            $etdiant = new Etudiant();
+            $etudiant = new Etudiant();
             $etudiant->setNationalite($row['nationalite']);
             $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
             $etudiant->setId($row['id']);
@@ -79,14 +79,14 @@ class EtudiantRepository {
 
 
     function getEtudiantsTermines(){
-        $statement = $this->connexion->dbConnect()>query(
+        $statement = $this->connexion->dbConnect()->query(
             "SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA);"
         );
 
         $etudiants=[];
         
         while(($row = $statement->fetch())){
-            $etdiant = new Etudiant();
+            $etudiant = new Etudiant();
             $etudiant->setNationalite($row['nationalite']);
             $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
             $etudiant->setId($row['id']);

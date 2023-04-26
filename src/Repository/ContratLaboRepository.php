@@ -5,11 +5,17 @@ use Application\Entity\ContratLabo;
 
 require_once('lib/DBconnexion.php');
 require_once('src/Entity/ContratLabo.php');
+require_once('src/Entity/Entreprise.php');
+require_once('src/Entity/Employe.php');
+
 
 use Application\Lib\Database\DBConnexion;
+use Application\Entity\Employe;
+use Application\Entity\Entreprise;
 
 class ContratLaboRepository {
 
+    public DBConnexion $connexion;
     /**
      * @return array
      */
@@ -23,11 +29,11 @@ class ContratLaboRepository {
         while(($row = $statement->fetch())){
             $contrat = new ContratLabo();
             $entreprise = new Entreprise();
-            $laboratoir = new Entreprise();
+            $laboratoire = new Entreprise();
             $employe = new Employe();
 
-            $laboratoir->setNom($row['laboratoire']);
-            $contrat->setLaboratoire($laboratoir);
+            $laboratoire->setNom($row['laboratoire']);
+            $contrat->setLaboratoire($laboratoire);
 
             $entreprise->setNom($row['entreprise']);
             $contrat->setEntreprise($entreprise);
@@ -58,11 +64,11 @@ class ContratLaboRepository {
         while(($row = $statement->fetch())){
             $contrat = new ContratLabo();
             $entreprise = new Entreprise();
-            $laboratoir = new Entreprise();
+            $laboratoire = new Entreprise();
             $employe = new Employe();
 
-            $laboratoir->setNom($row['laboratoire']);
-            $contrat->setLaboratoire($laboratoir);
+            $laboratoire->setNom($row['laboratoire']);
+            $contrat->setLaboratoire($laboratoire);
 
             $entreprise->setNom($row['entreprise']);
             $contrat->setEntreprise($entreprise);

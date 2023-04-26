@@ -3,6 +3,7 @@
 namespace Application\Entity;
 
 use DateTime;
+use Application\Entity\Employe;
 
 class ContratLabo {
     #region Attributs
@@ -64,10 +65,10 @@ class ContratLabo {
 	}
 	
 	/**
-	 * @param int $employeId 
+	 * @param Employe $employeId 
 	 * @return self
 	 */
-	public function setEmploye(Employe $employeId): self {
+	public function setEmploye(Employe $employe): self {
 		$this->employe = $employe;
 		return $this;
 	}

@@ -2,13 +2,14 @@
 namespace Application\Repository;
 
 use Application\Entity\Entreprise;
+use Application\Entity\Employe;
 
 require_once('lib/DBconnexion.php');
 require_once('src/Entity/Employe.php');
 
 use Application\Lib\Database\DBConnexion;
 
-class EntrepriseRepository {
+class EmployeRepository {
 
     #region attributs 
     public DBConnexion $connexion;

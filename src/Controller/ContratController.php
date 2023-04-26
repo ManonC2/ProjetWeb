@@ -7,8 +7,12 @@ require_once('src/Repository/ContratLaboRepository.php');
 
 use Application\Lib\Database\DBConnexion;
 use Application\Repository\ContratRepository;
+use Application\Repository\ContratSARepository;
+use Application\Repository\ContratLaboRepository;
 
 class ContratController {
+
+    public DBConnexion $connexion;
 
     function getNbContratsLabo(){
         $contratLaboRepo = new ContratLaboRepository();
@@ -21,7 +25,7 @@ class ContratController {
         
     function getConflits(){
         $contratSARepo = new ContratSARepository();
-        $contratLaboRepo->connexion = new DBConnexion();
+        $contratSARepo->connexion = new DBConnexion();
 
         $ContratsSA = $contratSARepo->ContratsSAConflit();
 
@@ -30,7 +34,7 @@ class ContratController {
 
     function getQtDefaultContratLaboOverflow(){
         $contratSARepo = new ContratSARepository();
-        $contratLaboRepo->connexion = new DBConnexion();
+        $contratSARepo->connexion = new DBConnexion();
 
         $ContratsSA = $contratSARepo->QtDefaultContratLaboOverflow();
 

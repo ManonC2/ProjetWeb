@@ -2,14 +2,16 @@
 namespace Application\Repository;
 
 use Application\Entity\ContratSA;
+use Application\Entity\Entreprise;
 
 require_once('lib/DBconnexion.php');
 require_once('src/Entity/ContratSA.php');
+require_once('src/Entity/Entreprise.php');
 
 use Application\Lib\Database\DBConnexion;
 
-class ContratLaboRepository {
-
+class ContratSARepository {
+    public DBConnexion $connexion;
     /**
      * @return array
      */
@@ -30,7 +32,7 @@ class ContratLaboRepository {
             $entreprise->setNom($row['entreprise']);
             $contrat->setEntreprise($entreprise);
 
-            $contrat->setDateFinAnticipe($row['annee']);
+            $contrat->setDateFinAnticipee($row['annee']);
             $contrat->setType($row['t']);
             $Contrats[] = $contrat;
         }

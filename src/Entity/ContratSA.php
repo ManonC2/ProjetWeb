@@ -10,10 +10,10 @@ class ContratSA {
     private DateTime $dateDebut;
     private DateTime $dateFinAnticipee;
     private DateTime $dateFinPrevue;
-    private Etudiant $etudiantId;
-    private Employe $employeId;
+    private Etudiant $etudiant;
+    private Employe $employe;
     private Entreprise $entreprise;
-    private Site $siteId;
+    private Site $site;
     private bool $type;
     private int $noteEntreprise;
     private int $noteMaitreStage;

@@ -2,9 +2,11 @@
 namespace Application\Repository;
 
 use Application\Entity\Entreprise;
+use Application\Entity\Site;
 
 require_once('lib/DBconnexion.php');
 require_once('src/Entity/Entreprise.php');
+require_once('src/Entity/Site.php');
 
 use Application\Lib\Database\DBConnexion;
 
@@ -45,7 +47,7 @@ class EntrepriseRepository {
             $site = new Site();
 
             $site->setAdresse($row['adresse']);
-            $entreprise->setSite($site);
+            $entreprise->setSiege($site);
 
             $entreprise->setNom($row['nom']);
             $entreprises[] = $entreprise;

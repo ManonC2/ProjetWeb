@@ -3,7 +3,7 @@
 namespace Application\Controller;
 
 require_once('lib/DBconnexion.php');
-require_once('src/Repository/EntrepriseRepository.php');
+require_once('src/Repository/EmployeRepository.php');
 
 use Application\Lib\Database\DBConnexion;
 use Application\Repository\EmployeRepository;
