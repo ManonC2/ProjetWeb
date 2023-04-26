@@ -50,5 +50,7 @@ use Application\Controller\EntrepriseController;
 //(new ContratController)->getTermines();
 
 //Affiche les étudiants avec un contrat terminé 
+//(new EtudiantController)->getEtudiantsTermines();
 
+//Affiche 
 
