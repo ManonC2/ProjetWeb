@@ -26,7 +26,7 @@ class EmployeController {
 
         $Employes = $EmployeRepo->getEmployeMaitreVacCurent();
 
-        require('./src/templates/employe/employeMaitreVac.php');
+        require('./src/templates/employe/employeMaitreVacCourant.php');
     }
 
     function getMA(){
@@ -35,7 +35,7 @@ class EmployeController {
 
         $Employes = $EmployeRepo->getEmployeMaitre();
 
-        require('./src/templates/employe/employeMaitreVac.php');
+        require('./src/templates/employe/employeMaitre.php');
     }
 
     function getVacataires(){
@@ -44,6 +44,6 @@ class EmployeController {
 
         $Employes = $EmployeRepo->getEmployeVacataire();
 
-        require('./src/templates/employe/employeMaitreVac.php');
+        require('./src/templates/employe/employeVac.php');
     }
 }
