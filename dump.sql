@@ -105,10 +105,12 @@ CREATE TABLE
         `dateFin` date,
         `laboratoire_id` int,
         `employe_id` int,
+        `entreprise_id` int,
         `note` int,
         CONSTRAINT `contratlabo_pk` PRIMARY KEY (`id`),
-        CONSTRAINT `contratlabo_fk_entreprise` FOREIGN KEY (`laboratoire_id`) REFERENCES `Entreprise` (`id`),
-        CONSTRAINT `contratlabo_fk_employe` FOREIGN KEY (`employe_id`) REFERENCES `Employe` (`id`)
+        CONSTRAINT `contratlabo_fk_labo` FOREIGN KEY (`laboratoire_id`) REFERENCES `Entreprise` (`id`),
+        CONSTRAINT `contratlabo_fk_employe` FOREIGN KEY (`employe_id`) REFERENCES `Employe` (`id`),
+        CONSTRAINT `contratlabo_fk_entreprise` FOREIGN KEY (`entreprise_id`) REFERENCES `Entreprise`(`id`)
     );
 
 INSERT INTO Etudiant (nationalite,numeroEtudiant) VALUES ('Francais','001');
@@ -243,12 +245,12 @@ INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VA
 INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (5,4,'2023-03-25','2024-04-01',NULL);
 INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (6,4,'2024-01-01','2026-01-01',NULL);
 
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (12,22,'2020-01-29','2022-01-29',3);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (13,25,'2020-03-14','2022-03-14',20);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (14,27,'2020-05-24','2022-05-24',12);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (15,29,'2021-07-14','2023-07-14',NULL);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (15,30,'2021-08-12','2023-08-12',NULL);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (12,24,'2022-09-04','2023-09-04',NULL);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (4,7,'2022-12-04','2024-12-04',NULL);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (10,19,'2023-01-07','2025-01-07',NULL);
-INSERT INTO ContratLabo (laboratoire_id,employe_id,dateDebut,dateFin,note) VALUES (11,21,'2023-06-12','2025-06-12',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (1,22,12,'2020-01-29','2022-01-29',3);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (5,25,13,'2020-03-14','2022-03-14',20);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (7,27,14,'2020-05-24','2022-05-24',12);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (16,29,15,'2021-07-14','2023-07-14',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (10,30,15,'2021-08-12','2023-08-12',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (3,24,12,'2022-09-04','2023-09-04',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (9,7,4,'2022-12-04','2024-12-04',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (8,19,10,'2023-01-07','2025-01-07',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (8,21,21,'2023-06-12','2025-06-12',NULL);
