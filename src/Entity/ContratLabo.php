@@ -9,8 +9,9 @@ class ContratLabo {
     private int $id;
     private DateTime $dateDebut;
     private DateTime $dateFin;
-    private int $laboratoireId;
-    private int $employeId;
+    private Entreprise $laboratoire;
+    private Employe $employe;
+	private Entreprise $entreprise;
     private int $note;
     
     #endregion
@@ -58,16 +59,16 @@ class ContratLabo {
 	/**
 	 * @return int
 	 */
-	public function getEmployeId(): int {
-		return $this->employeId;
+	public function getEmploye(): Employe {
+		return $this->employe;
 	}
 	
 	/**
 	 * @param int $employeId 
 	 * @return self
 	 */
-	public function setEmployeId(int $employeId): self {
-		$this->employeId = $employeId;
+	public function setEmploye(Employe $employeId): self {
+		$this->employe = $employe;
 		return $this;
 	}
 
@@ -90,16 +91,32 @@ class ContratLabo {
     	/**
 	 * @return int
 	 */
-	public function getLaboratoireId(): int {
-		return $this->laboratoireId;
+	public function getLaboratoire(): Entreprise {
+		return $this->laboratoire;
 	}
 	
 	/**
 	 * @param int $laboratoireId 
 	 * @return self
 	 */
-	public function setLaboratoireId(int $laboratoireId): self {
-		$this->laboratoireId = $laboratoireId;
+	public function setLaboratoire(Entreprise $laboratoire): self {
+		$this->laboratoire = $laboratoire;
+		return $this;
+	}
+
+		/**
+	 * @return int
+	 */
+	public function getEntreprise(): Entreprise {
+		return $this->entreprise;
+	}
+	
+	/**
+	 * @param int $laboratoireId 
+	 * @return self
+	 */
+	public function setEntreprise(Entreprise $entreprise): self {
+		$this->entreprise = $entreprise;
 		return $this;
 	}
     #endregion

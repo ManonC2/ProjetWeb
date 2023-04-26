@@ -11,7 +11,7 @@ use Application\Repository\EmployeRepository;
 class EmployeController {
 
         
-    function EmployeMaitreVac(){
+    function vacatairesMAToutTemps(){
         $EmployeRepo = new EmployeRepository();
         $EmployeRepo->connexion = new DBConnexion();
 
@@ -20,11 +20,29 @@ class EmployeController {
         require('./src/templates/employe/employeMaitreVac.php');
     }
 
-    function EmployeMaitreVacCurent(){
+    function vacatairesMACourant(){
         $EmployeRepo = new EmployeRepository();
         $EmployeRepo->connexion = new DBConnexion();
 
         $Employes = $EmployeRepo->getEmployeMaitreVacCurent();
+
+        require('./src/templates/employe/employeMaitreVac.php');
+    }
+
+    function getMA(){
+        $EmployeRepo = new EmployeRepository();
+        $EmployeRepo->connexion = new DBConnexion();
+
+        $Employes = $EmployeRepo->getEmployeMaitre();
+
+        require('./src/templates/employe/employeMaitreVac.php');
+    }
+
+    function getVacataires(){
+        $EmployeRepo = new EmployeRepository();
+        $EmployeRepo->connexion = new DBConnexion();
+
+        $Employes = $EmployeRepo->getEmployeVacataire();
 
         require('./src/templates/employe/employeMaitreVac.php');
     }

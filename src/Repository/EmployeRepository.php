@@ -29,7 +29,7 @@ class EntrepriseRepository {
             $employe->setNom($row['nom']);
             $employes[] = $employe;
         }
-        return $employe;
+        return $employes;
     }
 
     function getEmployeMaitreVacCurent(){
@@ -44,6 +44,36 @@ class EntrepriseRepository {
             $employe->setNom($row['nom']);
             $employes[] = $employe;
         }
-        return $employe;
+        return $employes;
+    }
+
+    function getEmployeMaitre(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Employe.nom AS nom FROM Employe WHERE id IN (SELECT employe_id from ContratSA);"
+        );
+
+        $employes=[];
+
+        while(($row = $statement->fetch())){
+            $employe = new Employe();
+            $employe->setNom($row['nom']);
+            $employes[] = $employe;
+        }
+        return $employes;
+    }
+
+    function getEmployeVacataire(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Employe.nom AS nom FROM Employe WHERE id IN (SELECT employe_id from ContratVacataire);"
+        );
+
+        $employes=[];
+
+        while(($row = $statement->fetch())){
+            $employe = new Employe();
+            $employe->setNom($row['nom']);
+            $employes[] = $employe;
+        }
+        return $employes;
     }
 }

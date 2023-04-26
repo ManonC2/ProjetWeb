@@ -80,8 +80,8 @@ INNER JOIN
 
 #6
 CREATE VIEW VueLaboContrat AS
-SELECT ContratLabo.*, Entreprise.id AS entrId, Entreprise.nom 
-FROM ContratLabo INNER JOIN Entreprise ON ContratLabo.entreprise_id = Entreprise.id;
+SELECT labo.nom AS laboratoire, Entreprise.nom AS entreprise, Employe.nom AS employe, ContratLabo.dateDebut AS date_debut, ContratLabo.dateFin AS date_fin 
+FROM ((ContratLabo INNER JOIN Entreprise ON ContratLabo.entreprise_id = Entreprise.id) INNER JOIN Entreprise AS labo ON ContratLabo.laboratoire_id=labo.id) INNER JOIN Employe ON ContratLabo.employe_id=Employe.id;
 
 #7
 CREATE VIEW VueMds AS

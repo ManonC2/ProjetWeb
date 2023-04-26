@@ -10,10 +10,10 @@ class ContratSA {
     private DateTime $dateDebut;
     private DateTime $dateFinAnticipee;
     private DateTime $dateFinPrevue;
-    private int $etudiantId;
-    private int $employeId;
-    private int $entrepriseId;
-    private int $siteId;
+    private Etudiant $etudiantId;
+    private Employe $employeId;
+    private Entreprise $entreprise;
+    private Site $siteId;
     private bool $type;
     private int $noteEntreprise;
     private int $noteMaitreStage;
@@ -76,45 +76,45 @@ class ContratSA {
 	/**
 	 * @return int
 	 */
-	public function getEtudiantId(): int {
-		return $this->etudiantId;
+	public function getEtudiant(): Etudiant {
+		return $this->etudiant;
 	}
 	
 	/**
 	 * @param int $etudiantId 
 	 * @return self
 	 */
-	public function setEtudiantId(int $etudiantId): self {
-		$this->etudiantId = $etudiantId;
+	public function setEtudiant(Etudiant $etudiant): self {
+		$this->etudiant = $etudiant;
 		return $this;
 	}
 	/**
 	 * @return int
 	 */
-	public function getEntrepriseId(): int {
-		return $this->entrepriseId;
+	public function getEntreprise(): Entreprise {
+		return $this->entreprise;
 	}
 	
 	/**
-	 * @param int $entrepriseId 
+	 * @param int $entreprise 
 	 * @return self
 	 */
-	public function setEntrepriseId(int $entrepriseId): self {
-		$this->entrepriseId = $entrepriseId;
+	public function setEntreprise(Entreprise $entreprise): self {
+		$this->entreprise = $entreprise;
 		return $this;
 	}
 	/**
 	 * @return int
 	 */
-	public function getSiteId(): int {
-		return $this->siteId;
+	public function getSite(): Site {
+		return $this->site;
 	}
 	/**
 	 * @param int $siteId 
 	 * @return self
 	 */
-	public function setSiteId(int $siteId): self {
-		$this->siteId = $siteId;
+	public function setSiteId(Site $site): self {
+		$this->site = $site;
 		return $this;
 	}
 	/**
@@ -165,16 +165,16 @@ class ContratSA {
 	/**
 	 * @return int
 	 */
-	public function getEmployeId(): int {
-		return $this->employeId;
+	public function getEmploye(): Employe {
+		return $this->employe;
 	}
 	
 	/**
 	 * @param int $employeId 
 	 * @return self
 	 */
-	public function setEmployeId(int $employeId): self {
-		$this->employeId = $employeId;
+	public function setEmploye(Employe $employe): self {
+		$this->employe = $employe;
 		return $this;
 	}
     #endregion
