@@ -27,4 +27,15 @@ class ContratController {
 
         require('./src/templates/contrat/ContratSaConflits.php');
     }
+
+    function getQtDefaultContratLaboOverflow(){
+        $contratSARepo = new ContratSARepository();
+        $contratLaboRepo->connexion = new DBConnexion();
+
+        $ContratsSA = $contratSARepo->QtDefaultContratLaboOverflow();
+
+        require('./src/templates/contrat/QtDefaultContratLaboOverflow.php');
+    }
+
+    
 }

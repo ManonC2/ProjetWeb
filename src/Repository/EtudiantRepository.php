@@ -109,4 +109,56 @@ class EtudiantRepository {
 
         return $etudiant;
     }
+
+    /**
+     * @return array
+     */
+    function QtFinAnticipe(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT	Etudiant.nationalite AS nationalite, Etudiant.numeroEtudiant AS numeroEtudiant
+            FROM (ContratSA INNER JOIN Entreprise ON ContratSA.entreprise_id=Entreprise.id) INNER JOIN Etudiant ON ContratSA.etudiant_id=Etudiant.id 
+            WHERE ContratSA.dateFinAnticipee IS NOT NULL AND Etudiant.id in (
+                SELECT ContratSA.etudiant_id 
+                FROM ContratSA 
+                WHERE ContratSA.dateFinAnticipee IS NOT NULL 
+                GROUP BY ContratSA.etudiant_id 
+                HAVING COUNT(ContratSA.id)>2
+            );"
+        );
+
+        $alternants=[];
+
+        while(($row = $statement->fetch())){
+            $alternant = new Etudiant();
+            $alternant->setNationalite($row['nationalite']);
+            $alternant->setNumeroEtudiant($row['numeroEtudiant']);
+
+            $alternants[] = $alternant;
+        }
+        return $alternants;
+    }
+
+    /**
+     * @return array
+     */
+    function QtDefaultContratEtuOverflow(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Etudiant.nationalite AS nationalite, Etudiant.numeroEtudiant AS numeroEtudiant 
+            FROM ContratSA INNER JOIN Etudiant ON ContratSA.etudiant_id=Etudiant.id 
+            WHERE ContratSA.dateDebut < CURRENT_DATE() AND ((ContratSA.dateFinAnticipee IS NULL AND ContratSA.dateFinPrevue > CURRENT_DATE()) OR (ContratSA.dateFinAnticipee > CURRENT_DATE())) 
+            GROUP BY Etudiant.id, Etudiant.numeroEtudiant 
+            HAVING COUNT(ContratSA.id)>1;"
+        );
+
+        $alternants=[];
+
+        while(($row = $statement->fetch())){
+            $alternant = new Etudiant();
+            $alternant->setNationalite($row['nationalite']);
+            $alternant->setNumeroEtudiant($row['numeroEtudiant']);
+
+            $alternants[] = $alternant;
+        }
+        return $alternants;
+    }
 }

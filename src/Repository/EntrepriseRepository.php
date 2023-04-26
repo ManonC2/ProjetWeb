@@ -52,4 +52,22 @@ class EntrepriseRepository {
         }
         return $entreprises;
     }
+
+    function getEntrepriseOverflow(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Entreprise.nom AS nom
+            FROM ContratSA INNER JOIN Entreprise ON ContratSA.entreprise_id=Entreprise.id 
+            GROUP BY Entreprise.id,Entreprise.nom 
+            HAVING (COUNT(ContratSA.etudiant_id) / SUM(Entreprise.nbEmployes)) > 0.15 AND COUNT(ContratSA.etudiant_id) > 3;"
+        );
+
+        $entreprises=[];
+
+        while(($row = $statement->fetch())){
+            $entreprise = new Entreprise();
+            $entreprise->setNom($row['nom']);
+            $entreprises[] = $entreprise;
+        }
+        return $entreprises;
+    }
 }

@@ -55,4 +55,22 @@ class EmployeController {
 
         require('./src/templates/employe/employeNote.php');
     }
+
+    function getQtDefaultMaOverflow(){
+        $EmployeRepo = new EmployeRepository();
+        $EmployeRepo->connexion = new DBConnexion();
+
+        $Employes = $EmployeRepo->QtDefaultMaOverflow();
+
+        require('./src/templates/employe/QtDefaultMaOverflow.php');
+    }
+
+    function getQtDefaultContratVacaOverflow(){
+        $EmployeRepo = new EmployeRepository();
+        $EmployeRepo->connexion = new DBConnexion();
+
+        $Employes = $EmployeRepo->QtDefaultContratVacaOverflow();
+
+        require('./src/templates/employe/QtDefaultContratVacaOverflow.php');
+    }
 }

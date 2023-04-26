@@ -28,4 +28,13 @@ class EntrepriseController {
 
         require('./src/templates/entreprises/entreprisesSieges.php');
     }
+
+    function getQtEntrepriseOverflow(){
+        $entrepriseRepo = new EntrepriseRepository();
+        $entrepriseRepo->connexion = new DBConnexion();
+
+        $entreprises = $entrepriseRepo->getEntrepriseOverflow();
+
+        require('./src/templates/entreprises/QtEntrepriseOverflow.php');
+    }
 }

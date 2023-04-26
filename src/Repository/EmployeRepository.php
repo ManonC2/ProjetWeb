@@ -95,4 +95,41 @@ class EntrepriseRepository {
         }
         return $employes;
     }
+
+    function QtDefaultMaOverflow(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Employe.id, Employe.nom 
+            FROM ContratSA INNER JOIN Employe ON ContratSA.employe_id=Employe.id 
+            GROUP BY Employe.id, Employe.nom 
+            HAVING COUNT(ContratSA.etudiant_id)>3; "
+        );
+
+        $employes=[];
+
+        while(($row = $statement->fetch())){
+            $employe = new Employe();
+            $employe->setNom($row['nom']);
+            $employes[] = $employe;
+        }
+        return $employes;
+    }
+
+    function QtDefaultContratVacaOverflow(){
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Employe.nom AS nom
+            FROM ContratVacataire INNER JOIN Employe ON ContratVacataire.employe_id=Employe.id 
+            WHERE dateDebut < CURRENT_DATE() and dateFin > CURRENT_DATE() 
+            GROUP BY Employe.id, Employe.nom 
+            HAVING COUNT(ContratVacataire.id)>1;"
+        );
+
+        $employes=[];
+
+        while(($row = $statement->fetch())){
+            $employe = new Employe();
+            $employe->setNom($row['nom']);
+            $employes[] = $employe;
+        }
+        return $employes;
+    }
 }

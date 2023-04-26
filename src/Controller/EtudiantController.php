@@ -49,4 +49,22 @@ class EtudiantController {
         require('./src/templates/etudiants/etudiantsTermines.php');
 
     }
+
+    function getQtFinAnticipe(){
+        $etudiantRepo = new EtudiantRepository();
+        $etudiantRepo->connexion = new DBConnexion();
+
+        $etudiantsTermines = $etudiantRepo->QtFinAnticipe();
+
+        require('./src/templates/etudiants/QtFinAnticipe.php');
+    }
+
+    function getQtDefaultContratEtuOverflow(){
+        $etudiantRepo = new EtudiantRepository();
+        $etudiantRepo->connexion = new DBConnexion();
+
+        $etudiantsTermines = $etudiantRepo->QtDefaultContratEtuOverflow();
+
+        require('./src/templates/etudiants/QtDefaultContratEtuOverflow.php');
+    }
 }
