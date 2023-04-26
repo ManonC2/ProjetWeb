@@ -59,6 +59,44 @@ class EtudiantRepository {
     }
 
 
+    function getAllStagiairesEtAlternants(){
+        $statement = $this->connexion->dbConnect()>query(
+            "SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA);"
+        );
+
+        $etudiants=[];
+        
+        while(($row = $statement->fetch())){
+            $etdiant = new Etudiant();
+            $etudiant->setNationalite($row['nationalite']);
+            $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
+            $etudiant->setId($row['id']);
+
+            $etudiants[] = $etudiant;
+        }
+        return $etudiants;
+    }
+
+
+    function getEtudiantsTermines(){
+        $statement = $this->connexion->dbConnect()>query(
+            "SELECT * FROM Etudiant WHERE id IN (SELECT etudiant_id FROM ContratSA);"
+        );
+
+        $etudiants=[];
+        
+        while(($row = $statement->fetch())){
+            $etdiant = new Etudiant();
+            $etudiant->setNationalite($row['nationalite']);
+            $etudiant->setNumeroEtudiant($row['numeroEtudiant']);
+            $etudiant->setId($row['id']);
+
+            $etudiants[] = $etudiant;
+        }
+        return $etudiants;
+    }
+
+
     function getEtudiant1(){
         $statement = $this->connexion->dbConnect()->prepare("SELECT id, nationalite, numeroEtudiant FROM Etudiant WHERE id = ?");
         $statement->execute([1]);

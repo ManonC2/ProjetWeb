@@ -29,4 +29,24 @@ class EtudiantController {
         require('./src/templates/etudiants/stagiaires.php');
 
     }
+
+    function all(){
+        $etudiantRepo = new EtudiantRepository();
+        $etudiantRepo->connexion = new DBConnexion();
+
+        $etudiants = $etudiantRepo->getAllStagiairesEtAlternants();
+
+        require('./src/templates/etudiants/stagiairesAlternants.php');
+
+    }
+
+    function etudiantsTermines(){
+        $etudiantRepo = new EtudiantRepository();
+        $etudiantRepo->connexion = new DBConnexion();
+
+        $etudiantsTermines = $etudiantRepo->getEtudiantsTermines();
+
+        require('./src/templates/etudiants/etudiantsTermines.php');
+
+    }
 }
