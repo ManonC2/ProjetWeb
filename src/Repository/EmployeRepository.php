@@ -16,6 +16,26 @@ class EmployeRepository {
     #endregion
 
     /**
+     * @param int $id
+     * @return Employe
+     */
+        public function getEmployeById(int $id){
+
+        $statement= $this->connexion->dbConnect()->prepare('SELECT id, nom, entreprise_id FROM Employe WHERE id = ?');
+
+        $statement->execute([$id]);
+
+        $row = $statement->fetch();
+
+        $employe = new Employe();
+        $employe->setId($row['id']);
+        $employe->setNom($row['nom']);
+        $employe->setEntrepriseId($row['entreprise_id']);
+        
+        return $employe;
+    }
+
+    /**
      * @return array
      */
     function getEmployeMaitreVac(){

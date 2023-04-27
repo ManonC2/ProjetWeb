@@ -8,7 +8,10 @@ foreach ($entreprises as $e) {
             <?= htmlspecialchars($e->getNom()); ?>
         </h3>
         <p>
-            <?= htmlspecialchars($e->getSite()->getAdresse()); ?>
+            <?= htmlspecialchars($e->getSiege()->getAdresse()); ?>
+            <?= htmlspecialchars($e->getSiege()->getVille()); ?>
+            <?= htmlspecialchars($e->getSiege()->getPays()); ?>
+
         </p>
     </div>
 <?php

@@ -3,12 +3,14 @@ namespace Application\Repository;
 
 use Application\Entity\Entreprise;
 use Application\Entity\Site;
+use Application\Repository\SiteRepository;
+use Application\Lib\Database\DBConnexion;
 
+require_once('src/Repository/SiteRepository.php');
 require_once('lib/DBconnexion.php');
 require_once('src/Entity/Entreprise.php');
 require_once('src/Entity/Site.php');
 
-use Application\Lib\Database\DBConnexion;
 
 class EntrepriseRepository {
 
@@ -35,9 +37,10 @@ class EntrepriseRepository {
     }
 
     function getentrepriseAdresse(){
+        $siteRepo = new SiteRepository();
+        $siteRepo->connexion = new DBConnexion();
         $statement = $this->connexion->dbConnect()->query(
-            "SELECT Entreprise.nom AS nom, Site.adresse AS adresse 
-            FROM Entreprise INNER JOIN Site on Entreprise.siege = Site.id;"
+            "SELECT nom, siege FROM Entreprise"
         );
 
         $entreprises=[];
@@ -46,8 +49,7 @@ class EntrepriseRepository {
             $entreprise = new Entreprise();
             $site = new Site();
 
-            $site->setAdresse($row['adresse']);
-            $entreprise->setSiege($site);
+            $entreprise->setSiege($siteRepo->getSiteById($row['siege']));
 
             $entreprise->setNom($row['nom']);
             $entreprises[] = $entreprise;
