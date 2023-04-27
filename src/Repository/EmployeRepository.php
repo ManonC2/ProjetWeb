@@ -119,7 +119,7 @@ class EmployeRepository {
 
     function QtDefaultMaOverflow(){
         $statement = $this->connexion->dbConnect()->query(
-            "SELECT Employe.id, Employe.nom 
+            "SELECT Employe.nom AS nom
             FROM ContratSA INNER JOIN Employe ON ContratSA.employe_id=Employe.id 
             GROUP BY Employe.id, Employe.nom 
             HAVING COUNT(ContratSA.etudiant_id)>3; "

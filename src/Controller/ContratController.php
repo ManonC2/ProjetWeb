@@ -32,14 +32,14 @@ class ContratController {
         require('./src/templates/contrat/ContratSaConflits.php');
     }
 
-    // function getQtDefaultContratLaboOverflow(){
-    //     $contratSARepo = new ContratSARepository();
-    //     $contratSARepo->connexion = new DBConnexion();
+     function getQtDefaultContratLaboOverflow(){
+        $contratSARepo = new ContratSARepository();
+        $contratSARepo->connexion = new DBConnexion();
 
-    //     $ContratsSA = $contratSARepo->QtDefaultContratLaboOverflow();
+        $ContratsSA = $contratSARepo->QtDefaultContratLaboOverflow();
 
-    //     require('./src/templates/contrat/QtDefaultContratLaboOverflow.php');
-    // }
+        require('./src/templates/contrat/QtDefaultContratLaboOverflow.php');
+     }
 
     
 }

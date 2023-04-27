@@ -62,3 +62,20 @@ use Application\Controller\ContratController;
 //Affiche les maîtres de stage avec leur note FONCTIONNE
 // (new EmployeController)->getMANote();
 
+//Affiche les Maitres de stage qui on plus de 3 etudiants
+//(new EmployeController)->getQtDefaultMaOverflow();
+
+//Affiche les employe qui on plus d'un contrat Vacataire
+//(new EmployeController)->getQtDefaultContratVacaOverflow();
+
+//Affiche les Contrats Labo qui on le même referents
+//(new ContratController)->getQtDefaultContratLaboOverflow();
+
+//Affiche les entreprise qui ont trop d'etudiant en stage ou en alternance
+//(new EntrepriseController)->getQtEntrepriseOverflow();
+
+//Affiche les Etudiant qui on plus de 3 fin Anticipe
+//(new EtudiantController)->getQtFinAnticipe();
+
+//Affiche les Etudiant qui on plus de 1 contrat
+//(new EtudiantController)->getQtDefaultContratEtuOverflow();
