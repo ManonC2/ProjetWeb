@@ -60,9 +60,11 @@ try {
                 // (new EtudiantController)->etudiantsDeuxTermines();
                 break;
             case '16':
-                
+                (new EmployeController)->getMANote();
+                break;
             case '17':
-
+                (new ContratController)->getQtDefaultContratLaboOverflow();
+                break;
         }
     }else {
             (new BaseController)->base();

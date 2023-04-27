@@ -39,5 +39,8 @@ class ContratSARepository {
         return $Contrats;
     }
 
+    function QtDefaultContratLaboOverflow(){
+        
+    }
 
 }
