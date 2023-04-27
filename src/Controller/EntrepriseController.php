@@ -29,6 +29,15 @@ class EntrepriseController {
         require('./src/templates/entreprises/entreprisesSieges.php');
     }
 
+    function getNombreContrats(){
+        $entrepriseRepo = new EntrepriseRepository();
+        $entrepriseRepo->connexion = new DBConnexion();
+
+        $entreprises = $entrepriseRepo->NombreContrats();
+
+        require('./src/templates/entreprises/entreprisesNbContrat.php');
+    }
+
     function getQtEntrepriseOverflow(){
         $entrepriseRepo = new EntrepriseRepository();
         $entrepriseRepo->connexion = new DBConnexion();

@@ -27,7 +27,7 @@ use Application\Controller\ContratController;
 // (new ContratController)->getNombreContrats();
 
 //Affiche les contrats d'un labo 
-// (new ContratController)->getNbContratsLabo();
+//(new ContratController)->getNbContratsLabo();
 
 //Affiche les entreprises bloquées FONCTIONNE
 // (new EntrepriseController)->entreprisesBloquees();
