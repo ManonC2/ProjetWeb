@@ -32,14 +32,22 @@ class ContratController {
         require('./src/templates/contrat/ContratSaConflits.php');
     }
 
+<<<<<<< HEAD
      function getQtDefaultContratLaboOverflow(){
+=======
+    function getQtDefaultContratLaboOverflow(){
+>>>>>>> e519c5677a4811e8af2902b6d112c47694a6cc0a
         $contratSARepo = new ContratSARepository();
         $contratSARepo->connexion = new DBConnexion();
 
         $ContratsSA = $contratSARepo->QtDefaultContratLaboOverflow();
 
         require('./src/templates/contrat/QtDefaultContratLaboOverflow.php');
+<<<<<<< HEAD
      }
+=======
+    }
+>>>>>>> e519c5677a4811e8af2902b6d112c47694a6cc0a
 
     
 }
