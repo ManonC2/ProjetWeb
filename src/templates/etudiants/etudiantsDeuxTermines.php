@@ -11,10 +11,16 @@ foreach ($etudiantsTermines as $e) {
             <?= nl2br(htmlspecialchars($e['nationalite'])); ?>
         </p>
         <p>
-            <?= nl2br(htmlspecialchars($e['entNom'])); ?>
+            Entreprsise 1 : <?= nl2br(htmlspecialchars($e['Entr1'])); ?>
         </p>
         <p> 
-            <?= nl2br(htmlspecialchars($e['anneeFin'])); ?>
+            Annee 1 : <?= nl2br(htmlspecialchars($e['AnneeFin1'])); ?>
+        </p>
+        <p>
+            Entreprsise 2 : <?= nl2br(htmlspecialchars($e['Entr2'])); ?>
+        </p>
+        <p> 
+            Annee 2 : <?= nl2br(htmlspecialchars($e['AnneeFin2'])); ?>
         </p>
     </div>
 <?php

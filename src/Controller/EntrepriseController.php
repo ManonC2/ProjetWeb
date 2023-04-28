@@ -38,6 +38,15 @@ class EntrepriseController {
         require('./src/templates/entreprises/entreprisesNbContrat.php');
     }
 
+    function getTermines(){
+        $entrepriseRepo = new EntrepriseRepository();
+        $entrepriseRepo->connexion = new DBConnexion();
+
+        $entreprises = $entrepriseRepo->Termines();
+
+        require('./src/templates/entreprises/Termines.php');
+    }
+
     function getQtEntrepriseOverflow(){
         $entrepriseRepo = new EntrepriseRepository();
         $entrepriseRepo->connexion = new DBConnexion();

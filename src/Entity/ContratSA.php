@@ -2,14 +2,13 @@
 
 namespace Application\Entity;
 
-use DateTime;
 
 class ContratSA {
     #region Attributs
     private int $id;
-    private DateTime $dateDebut;
-    private DateTime $dateFinAnticipee;
-    private DateTime $dateFinPrevue;
+    private string $dateDebut;
+    private string $dateFinAnticipee;
+    private string $dateFinPrevue;
     private Etudiant $etudiant;
     private Employe $employe;
     private Entreprise $entreprise;
@@ -28,48 +27,48 @@ class ContratSA {
 	}
 
 	/**
-	 * @return DateTime
+	 * @return string
 	 */
-	public function getDateDebut(): DateTime {
+	public function getDateDebut(): string {
 		return $this->dateDebut;
 	}
 	
 	/**
-	 * @param DateTime $dateDebut 
+	 * @param string $dateDebut 
 	 * @return self
 	 */
-	public function setDateDebut(DateTime $dateDebut): self {
+	public function setDateDebut(string $dateDebut): self {
 		$this->dateDebut = $dateDebut;
 		return $this;
 	}
 
 	/**
-	 * @return DateTime
+	 * @return string
 	 */
-	public function getDateFinAnticipee(): DateTime {
+	public function getDateFinAnticipee(): string {
 		return $this->dateFinAnticipee;
 	}
 	
 	/**
-	 * @param DateTime $dateFinAnticipee 
+	 * @param string $dateFinAnticipee 
 	 * @return self
 	 */
-	public function setDateFinAnticipee(DateTime $dateFinAnticipee): self {
+	public function setDateFinAnticipee(string $dateFinAnticipee): self {
 		$this->dateFinAnticipee = $dateFinAnticipee;
 		return $this;
 	}
 	/**
-	 * @return DateTime
+	 * @return string
 	 */
-	public function getDateFinPrevue(): DateTime {
+	public function getDateFinPrevue(): string {
 		return $this->dateFinPrevue;
 	}
 	
 	/**
-	 * @param DateTime $dateFinPrevue 
+	 * @param string $dateFinPrevue 
 	 * @return self
 	 */
-	public function setDateFinPrevue(DateTime $dateFinPrevue): self {
+	public function setDateFinPrevue(string $dateFinPrevue): self {
 		$this->dateFinPrevue = $dateFinPrevue;
 		return $this;
 	}

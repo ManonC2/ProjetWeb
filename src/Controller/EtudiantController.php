@@ -16,7 +16,7 @@ class EtudiantController {
         $etudiantRepo->connexion = new DBConnexion();
 
         $alternants = $etudiantRepo->getAllAlternants();
-
+        
         require('./src/templates/etudiants/alternants.php');
     }
 
@@ -47,6 +47,16 @@ class EtudiantController {
         $etudiantsTermines = $etudiantRepo->getEtudiantsTermines();
 
         require('./src/templates/etudiants/etudiantsTermines.php');
+
+    }
+
+    function etudiantsDeuxTermines(){
+        $etudiantRepo = new EtudiantRepository();
+        $etudiantRepo->connexion = new DBConnexion();
+        
+        $etudiantsTermines = $etudiantRepo->getEtudiantsDeuxTermines();
+        
+        require('./src/templates/etudiants/etudiantsDeuxTermines.php');
 
     }
 

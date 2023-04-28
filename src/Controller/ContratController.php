@@ -18,10 +18,10 @@ class ContratController {
     function getNbContratsLabo(){
         $contratLaboRepo = new ContratLaboRepository();
         $contratLaboRepo->connexion = new DBConnexion();
-
+        
         $contratsLabo = $contratLaboRepo->contratsLabo();
 
-        require('./src/templates/contrat/contratLabo.php');
+        require('./src/templates/contrat/ContratLabo.php');
     }
         
     function getConflits(){
@@ -30,7 +30,7 @@ class ContratController {
 
         $ContratsSA = $contratSARepo->ContratsSAConflit();
 
-        require('./src/templates/contrat/ContratSaConflits.php');
+        require('./src/templates/contrat/ContratSAConflits.php');
     }
 
     function getQtDefaultContratLaboOverflow(){
