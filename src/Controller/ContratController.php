@@ -4,6 +4,7 @@ namespace Application\Controller;
 
 require_once('lib/DBconnexion.php');
 require_once('src/Repository/ContratLaboRepository.php');
+require_once('src/Repository/ContratSARepository.php');
 
 use Application\Lib\Database\DBConnexion;
 use Application\Repository\ContratRepository;
@@ -17,10 +18,10 @@ class ContratController {
     function getNbContratsLabo(){
         $contratLaboRepo = new ContratLaboRepository();
         $contratLaboRepo->connexion = new DBConnexion();
-
+        
         $contratsLabo = $contratLaboRepo->contratsLabo();
 
-        require('./src/templates/contrat/contratLabo.php');
+        require('./src/templates/contrat/ContratLabo.php');
     }
         
     function getConflits(){
@@ -29,11 +30,11 @@ class ContratController {
 
         $ContratsSA = $contratSARepo->ContratsSAConflit();
 
-        require('./src/templates/contrat/ContratSaConflits.php');
+        require('./src/templates/contrat/ContratSAConflits.php');
     }
 
     function getQtDefaultContratLaboOverflow(){
-        $contratSARepo = new ContratSARepository();
+        $contratSARepo = new ContratLaboRepository();
         $contratSARepo->connexion = new DBConnexion();
 
         $ContratsSA = $contratSARepo->QtDefaultContratLaboOverflow();

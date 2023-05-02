@@ -57,6 +57,32 @@ class EntrepriseRepository {
         return $entreprises;
     }
 
+    function Termines(){
+        $siteRepo = new SiteRepository();
+        $siteRepo->connexion = new DBConnexion();
+        $statement = $this->connexion->dbConnect()->query(
+            "SELECT Entreprise.nom AS nom,COUNT(ContratSA.noteEntr) AS nb,MIN(ContratSA.noteEntr) AS min,AVG(ContratSA.noteEntr) AS moy,MAX(ContratSA.noteEntr) AS max 
+            FROM ContratSA INNER JOIN Entreprise ON ContratSA.entreprise_id=Entreprise.id 
+            WHERE (ContratSA.dateFinAnticipee IS NULL and ContratSA.dateFinPrevue < CURRENT_DATE()) OR ContratSA.dateFinAnticipee < CURRENT_DATE() 
+            GROUP BY Entreprise.nom;"
+        );
+
+        $entreprises=[];
+
+        while(($row = $statement->fetch())){
+            $entreprise = [];
+
+            $entreprise['nom'] = $row['nom'];
+            $entreprise['nb'] = $row['nb'];
+            $entreprise['min'] = $row['min'];
+            $entreprise['moy'] = $row['moy'];
+            $entreprise['max'] = $row['max'];
+            echo 'test';
+            $entreprises[] = $entreprise;
+        }
+        return $entreprises;
+    }
+
     function NombreContrats(){
         $statement = $this->connexion->dbConnect()->query(
             "SELECT stage.nom AS nom, nbStage, nbAlternance, nbContratVacataire, nbContratLabo, nbDonation

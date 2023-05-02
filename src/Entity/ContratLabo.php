@@ -2,14 +2,14 @@
 
 namespace Application\Entity;
 
-use DateTime;
+
 use Application\Entity\Employe;
 
 class ContratLabo {
     #region Attributs
     private int $id;
-    private DateTime $dateDebut;
-    private DateTime $dateFin;
+    private string $dateDebut;
+    private string $dateFin;
     private Entreprise $laboratoire;
     private Employe $employe;
 	private Entreprise $entreprise;
@@ -26,17 +26,17 @@ class ContratLabo {
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-	public function getDateDebut(): DateTime {
+	public function getDateDebut(): string {
 		return $this->dateDebut;
 	}
 	
     /**
-     * @param DateTime $dateDebut
+     * @param string $dateDebut
      * @return self
      */
-	public function setDateDebut(DateTime $dateDebut): self {
+	public function setDateDebut(string $dateDebut): self {
 		$this->dateDebut = $dateDebut;
 		return $this;
 	}
@@ -74,17 +74,17 @@ class ContratLabo {
 	}
 
 	/**
-	 * @return DateTime
+	 * @return string
 	 */
-	public function getDateFin(): DateTime {
+	public function getDateFin(): string {
 		return $this->dateFin;
 	}
 	
 	/**
-	 * @param DateTime $dateFin 
+	 * @param string $dateFin 
 	 * @return self
 	 */
-	public function setDateFin(DateTime $dateFin): self {
+	public function setDateFin(string $dateFin): self {
 		$this->dateFin = $dateFin;
 		return $this;
     }

@@ -1,23 +1,23 @@
 <?php ob_start(); ?>
 
 <?php 
-foreach ($Contrats as $e) {
+foreach ($contratsLabo as $e) {
 ?>
     <div>
         <h3>
             <?= htmlspecialchars($e->getLaboratoire()->getNom()); ?>
         </h3>
         <p>
-        <?= htmlspecialchars($e->getEntreprise()->getNom()); ?>
+            <?= htmlspecialchars($e->getEntreprise()->getNom()); ?>
         </p>
         <p>
-        <?= htmlspecialchars($e->getEmploye()->getNom()); ?>
+            <?= htmlspecialchars($e->getEmploye()->getNom()); ?>
         </p>
         <p>
-        <?= htmlspecialchars($e->getDateDebut()); ?>
+            <?= htmlspecialchars($e->getDateDebut()); ?>
         </p>
         <p>
-        <?= htmlspecialchars($e->getDateFin()); ?>
+            <?= htmlspecialchars($e->getDateFin()); ?>
         </p>
     </div>
 <?php

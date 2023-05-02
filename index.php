@@ -27,7 +27,7 @@ try {
                 (new EmployeController)->vacatairesMACourant();
                 break;
             case '5':
-                // (new ContratController)->nombreContrats();
+                (new EntrepriseController)->getNombreContrats();
                 break;
             case '6':
                 (new ContratController)->getNbContratsLabo();
@@ -51,13 +51,13 @@ try {
                 (new ContratController)->getConflits();
                 break;
             case '13':
-                // (new ContratController)->getTermines();
+                (new EntrepriseController)->getTermines();
                 break;
             case '14':
                 (new EtudiantController)->etudiantsTermines();
                 break;
             case '15':
-                // (new EtudiantController)->etudiantsDeuxTermines();
+                (new EtudiantController)->etudiantsDeuxTermines();
                 break;
             case '16':
                 (new EmployeController)->getMANote();

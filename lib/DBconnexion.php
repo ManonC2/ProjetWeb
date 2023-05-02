@@ -8,7 +8,7 @@ class DBConnexion {
 
     public function dbConnect() : \PDO {
         if($this->database === null) {
-            $this->database = new \PDO('mysql:host=localhost;dbname=ProjetWeb;charset=utf8','root', '');
+            $this->database = new \PDO('mysql:host=localhost;dbname=ProjetWeb;charset=utf8','lelazo', 'root');
         }
         return $this->database;
     }
