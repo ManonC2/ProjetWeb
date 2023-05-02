@@ -5,6 +5,7 @@ use Application\Entity\Etudiant;
 use Application\Entity\Entreprise;
 
 require_once('lib/DBconnexion.php');
+require_once('src/Entity/Etudiant.php');
 require_once('src/Entity/Entreprise.php');
 
 use Application\Lib\Database\DBConnexion;

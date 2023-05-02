@@ -77,7 +77,7 @@ class EntrepriseRepository {
             $entreprise['min'] = $row['min'];
             $entreprise['moy'] = $row['moy'];
             $entreprise['max'] = $row['max'];
-            echo 'test';
+            
             $entreprises[] = $entreprise;
         }
         return $entreprises;
