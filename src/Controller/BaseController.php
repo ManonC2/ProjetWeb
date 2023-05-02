@@ -10,9 +10,6 @@ use Application\Repository\EtudiantRepository;
 
 class BaseController {
     function base() {
-        $etudiantRepo = new EtudiantRepository();
-        $etudiantRepo->connexion = new DBConnexion();
-        $etudiant = $etudiantRepo->getEtudiant1();
 
         require('./src/templates/homepage.php');
     }
