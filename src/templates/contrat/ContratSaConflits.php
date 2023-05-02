@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <?php 
-foreach ($Contrats as $e) {
+foreach ($ContratsSA as $e) {
 ?>
     <div>
         <h3>
@@ -11,7 +11,7 @@ foreach ($Contrats as $e) {
         <?= htmlspecialchars($e->getDateFinAnticipee()); ?>
         </p>
         <p>
-        <?= htmlspecialchars($e->getDateFinAnticipee()); ?>
+        <?= htmlspecialchars($e->getType()); ?>
         </p>
     </div>
 <?php
