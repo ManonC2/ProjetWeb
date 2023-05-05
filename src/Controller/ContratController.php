@@ -30,7 +30,7 @@ class ContratController {
 
         $ContratsSA = $contratSARepo->ContratsSAConflit();
 
-        require('./src/templates/contrat/ContratSAConflits.php');
+        require('./src/templates/contrat/conflits.php');
     }
 
     function getQtDefaultContratLaboOverflow(){
