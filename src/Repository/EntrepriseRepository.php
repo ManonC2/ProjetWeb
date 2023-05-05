@@ -123,7 +123,7 @@ class EntrepriseRepository {
             $entreprises[] = $entreprise;
         }
         $entreprise = [];
-        $entreprise['nom'] = 'Totale';
+        $entreprise['nom'] = 'Total';
         $entreprise['nbStage'] = $nbStage;
         $entreprise['nbAlternance'] = $nbAlternance;
         $entreprise['nbContratVacataire'] = $nbContratVacataire;

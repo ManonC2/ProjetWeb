@@ -15,36 +15,36 @@ class EmployeController {
         $EmployeRepo = new EmployeRepository();
         $EmployeRepo->connexion = new DBConnexion();
 
-        $Employes = $EmployeRepo->getEmployeMaitreVac();
+        $employes = $EmployeRepo->getEmployeMaitreVac();
 
-        require('./src/templates/employe/employeMaitreVac.php');
+        require('./src/templates/employe/employe.php');
     }
 
     function vacatairesMACourant(){
         $EmployeRepo = new EmployeRepository();
         $EmployeRepo->connexion = new DBConnexion();
 
-        $Employes = $EmployeRepo->getEmployeMaitreVacCurent();
+        $employes = $EmployeRepo->getEmployeMaitreVacCurent();
 
-        require('./src/templates/employe/employeMaitreVacCourant.php');
+        require('./src/templates/employe/employe.php');
     }
 
     function getMA(){
         $EmployeRepo = new EmployeRepository();
         $EmployeRepo->connexion = new DBConnexion();
 
-        $Employes = $EmployeRepo->getEmployeMaitre();
+        $employes = $EmployeRepo->getEmployeMaitre();
 
-        require('./src/templates/employe/employeMaitre.php');
+        require('./src/templates/employe/employe.php');
     }
 
     function getVacataires(){
         $EmployeRepo = new EmployeRepository();
         $EmployeRepo->connexion = new DBConnexion();
 
-        $Employes = $EmployeRepo->getEmployeVacataire();
+        $employes = $EmployeRepo->getEmployeVacataire();
 
-        require('./src/templates/employe/employeVac.php');
+        require('./src/templates/employe/employe.php');
     }
 
     function getMANote(){

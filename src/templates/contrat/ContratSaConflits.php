@@ -1,19 +1,34 @@
 <?php ob_start(); ?>
 
+    <table class="table w-75 mx-auto">
+    <thead>
+        <tr>
+        <th scope="col">Nom de l'entreprise</th>
+        <th scope="col">Date de fin anticipée</th>
+        <th scope="col">Type de contrat</th>
+        </tr>
+  </thead>
+  <tbody>
+
 <?php 
 foreach ($ContratsSA as $e) {
 ?>
-    <div>
-        <h3>
+        <td scope="row">
             <?= htmlspecialchars($e->getEntreprise()->getNom()); ?>
-        </h3>
-        <p>
+</td>
+        <td>
         <?= htmlspecialchars($e->getDateFinAnticipee()); ?>
-        </p>
-        <p>
-        <?= htmlspecialchars($e->getType()); ?>
-        </p>
-    </div>
+</td>
+        <td>
+        <?php
+         if(!($e->getType())){
+            echo "Alternance";
+         } else {
+            echo "Stage";
+         }
+         ?>
+</td>
+  </tbody>
 <?php
 }
 $content = ob_get_clean(); 

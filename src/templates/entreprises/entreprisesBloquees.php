@@ -1,13 +1,18 @@
 <?php ob_start(); ?>
-
-<?php 
+    <table class="table w-75 mx-auto">
+    <thead>
+        <tr>
+        <th scope="col">Nom de l'entreprise</th>
+        </tr>
+  </thead>
+  <tbody>
+  <?php 
 foreach ($entreprises as $e) {
 ?>
-    <div>
-        <h3>
-            <?= htmlspecialchars($e->getNom()); ?>
-        </h3>
-    </div>
+<tr>
+      <td scope="row"> <?= htmlspecialchars($e->getNom()); ?></td>
+</tbody>
+
 <?php
 }
 $content = ob_get_clean(); 

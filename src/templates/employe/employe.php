@@ -3,17 +3,14 @@
     <thead>
         <tr>
         <th scope="col">Nom</th>
-        <th scope="col">Note</th>
         </tr>
   </thead>
   <tbody>
   <?php 
-foreach ($Employes as $e) {
+foreach ($employes as $e) {
 ?>
 <tr>
       <td scope="row"> <?= htmlspecialchars($e->getNom()); ?></td>
-     <td scope="row"> <?= htmlspecialchars($e->getNoteCumul()); ?></td>
-
 </tbody>
 
 <?php

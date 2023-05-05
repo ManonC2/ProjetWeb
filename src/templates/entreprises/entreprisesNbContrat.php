@@ -1,33 +1,29 @@
 <?php ob_start(); ?>
 
-<?php 
+    <table class="table w-75 mx-auto">
+    <thead>
+        <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Stages</th>
+        <th scope="col">Alternances</th>
+        <th scope="col">Vacataires</th>
+        <th scope="col">Laboratoire</th>
+        <th scope="col">Donation</th>
+        </tr>
+  </thead>
+  <tbody>
+  <?php 
 foreach ($entreprises as $e) {
 ?>
-    <div>
-        <h3>
-            <?= htmlspecialchars($e['nom']); ?>
-        </h3>
+<tr>
+      <td scope="row"> <?= htmlspecialchars($e['nom']); ?></td>
+      <td> <?= htmlspecialchars($e['nbStage']); ?></td>
+      <td> <?= htmlspecialchars($e['nbAlternance']); ?></td>
+      <td> <?= htmlspecialchars($e['nbContratVacataire']); ?></td>
+      <td> <?= htmlspecialchars($e['nbContratLabo']); ?></td>
+      <td> <?= htmlspecialchars($e['nbDonation']); ?></td>
 
-        <p>
-            Nombre Stages : <strong><?= htmlspecialchars($e['nbStage']); ?></strong>
-        </p>
-
-        <p>
-            Nombre Alternances : <strong><?= htmlspecialchars($e['nbAlternance']); ?></strong>
-        </p>
-
-        <p>
-            Nombre Contrat Vacataires : <strong><?= htmlspecialchars($e['nbContratVacataire']); ?></strong>
-        </p>
-
-        <p>
-            Nombre Contrat Laboratoire : <strong><?= htmlspecialchars($e['nbContratLabo']); ?></strong>
-        </p>
-
-        <p>
-            Nombre Donation : <strong><?= htmlspecialchars($e['nbDonation']); ?></strong>
-        </p>
-    </div>
+</tbody>
 <?php
 }
 $content = ob_get_clean(); 

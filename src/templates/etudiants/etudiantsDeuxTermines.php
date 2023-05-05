@@ -1,28 +1,32 @@
 <?php ob_start(); ?>
 
+    <table class="table w-75 mx-auto">
+    <thead>
+        <tr>
+        <th scope="col">Numéro étudiant</th>
+        <th scope="col">Nationalité</th>
+        <th scope="col">Nom de la première entreprise d'accueil</th>
+        <th scope="col">Année de fin du premier contrat</th>
+        <th scope="col">Nom de la deuxième entreprise d'accueil</th>
+        <th scope="col">Année de fin du deuxième contrat</th>
+        </tr>
+  </thead>
+  <tbody>
+
 <?php 
 foreach ($etudiantsTermines as $e) {
 ?>
-    <div>
-        <h3>
-            <?= htmlspecialchars($e['numEtu']); ?>
-        </h3>
-        <p>
-            <?= nl2br(htmlspecialchars($e['nationalite'])); ?>
-        </p>
-        <p>
-            Entreprsise 1 : <?= nl2br(htmlspecialchars($e['Entr1'])); ?>
-        </p>
-        <p> 
-            Annee 1 : <?= nl2br(htmlspecialchars($e['AnneeFin1'])); ?>
-        </p>
-        <p>
-            Entreprsise 2 : <?= nl2br(htmlspecialchars($e['Entr2'])); ?>
-        </p>
-        <p> 
-            Annee 2 : <?= nl2br(htmlspecialchars($e['AnneeFin2'])); ?>
-        </p>
-    </div>
+<tr>
+      <td scope="row"><?= htmlspecialchars($e['numEtu']); ?>
+</td>
+      <td><?= nl2br(htmlspecialchars($e['nationalite'])); ?></td>
+      <td><?= nl2br(htmlspecialchars($e['Entr1'])); ?></td>
+      <td><?= nl2br(htmlspecialchars($e['AnneeFin1'])); ?></td>
+      <td><?= nl2br(htmlspecialchars($e['Entr2'])); ?></td>
+      <td><?= nl2br(htmlspecialchars($e['AnneeFin2'])); ?></td>
+
+
+</tbody>    
 <?php
 }
 $content = ob_get_clean(); 

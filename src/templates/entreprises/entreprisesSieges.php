@@ -1,19 +1,24 @@
 <?php ob_start(); ?>
-
-<?php 
+    <table class="table w-75 mx-auto">
+    <thead>
+        <tr>
+        <th scope="col">Nom de l'entreprise</th>
+        <th scope="col">Adresse du siège</th>
+        </tr>
+  </thead>
+  <tbody>
+  <?php 
 foreach ($entreprises as $e) {
 ?>
-    <div>
-        <h3>
-            <?= htmlspecialchars($e->getNom()); ?>
-        </h3>
-        <p>
-            <?= htmlspecialchars($e->getSiege()->getAdresse()); ?>
+<tr>
+      <td scope="row"> <?= htmlspecialchars($e->getNom()); ?></td>
+      <td>            <?= htmlspecialchars($e->getSiege()->getAdresse()); ?>
             <?= htmlspecialchars($e->getSiege()->getVille()); ?>
             <?= htmlspecialchars($e->getSiege()->getPays()); ?>
 
-        </p>
-    </div>
+</td>
+</tbody>
+
 <?php
 }
 $content = ob_get_clean(); 

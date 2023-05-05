@@ -15,18 +15,18 @@ class EtudiantController {
         $etudiantRepo = new EtudiantRepository();
         $etudiantRepo->connexion = new DBConnexion();
 
-        $alternants = $etudiantRepo->getAllAlternants();
+        $etudiants = $etudiantRepo->getAllAlternants();
         
-        require('./src/templates/etudiants/alternants.php');
+        require('./src/templates/etudiants/etudiants.php');
     }
 
     function stagiaires(){
         $etudiantRepo = new EtudiantRepository();
         $etudiantRepo->connexion = new DBConnexion();
 
-        $stagiaires = $etudiantRepo->getAllStagiaires();
+        $etudiants = $etudiantRepo->getAllStagiaires();
 
-        require('./src/templates/etudiants/stagiaires.php');
+        require('./src/templates/etudiants/etudiants.php');
 
     }
 
@@ -36,7 +36,7 @@ class EtudiantController {
 
         $etudiants = $etudiantRepo->getAllStagiairesEtAlternants();
 
-        require('./src/templates/etudiants/stagiairesAlternants.php');
+        require('./src/templates/etudiants/etudiants.php');
 
     }
 
