@@ -13,4 +13,8 @@ class BaseController {
 
         require('./src/templates/homepage.php');
     }
+
+    function getQtDefault() {
+        require('./src/templates/QtDefault.php');
+    }
 }
