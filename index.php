@@ -63,7 +63,25 @@ try {
                 (new EmployeController)->getMANote();
                 break;
             case '17':
+                (new BaseController)->getQtDefault();
+                break;
+            case '18':
                 (new ContratController)->getQtDefaultContratLaboOverflow();
+                break;
+            case '19':
+                (new EtudiantController)->getQtFinAnticipe();
+                break;
+            case '20':
+                (new EntrepriseController)->getQtEntrepriseOverflow();
+                break;
+            case '21':
+                (new EmployeController)->getQtDefaultMaOverflow();
+                break;
+            case '22':
+                (new EmployeController)->getQtDefaultContratVacaOverflow();
+                break;
+            case '23':
+                (new EtudiantController)->getQtDefaultContratEtuOverflow();
                 break;
         }
     }else {
