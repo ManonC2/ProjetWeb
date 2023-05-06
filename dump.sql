@@ -230,6 +230,9 @@ INSERT INTO ContratSA(etudiant_id,employe_id,entreprise_id,site_id,type,dateDebu
 INSERT INTO ContratSA(etudiant_id,employe_id,entreprise_id,site_id,type,dateDebut,dateFinAnticipee,dateFinPrevue,noteEntr,noteMA) VALUES (8,11,2,3,false,'2023-08-16',NULL,'2025-08-20',NULL,NULL);
 INSERT INTO ContratSA(etudiant_id,employe_id,entreprise_id,site_id,type,dateDebut,dateFinAnticipee,dateFinPrevue,noteEntr,noteMA) VALUES (9,13,7,2,false,'2023-09-18',NULL,'2025-09-18',NULL,NULL);
 INSERT INTO ContratSA(etudiant_id,employe_id,entreprise_id,site_id,type,dateDebut,dateFinAnticipee,dateFinPrevue,noteEntr,noteMA) VALUES (10,12,7,1,false,'2024-10-20',NULL,'2027-03-01',NULL,NULL);
+INSERT INTO ContratSA(etudiant_id,employe_id,entreprise_id,site_id,type,dateDebut,dateFinAnticipee,dateFinPrevue,noteEntr,noteMA) VALUES (7,6,4,3,false,'2023-07-14','2023-10-06','2024-07-14',6,6);
+INSERT INTO ContratSA(etudiant_id,employe_id,entreprise_id,site_id,type,dateDebut,dateFinAnticipee,dateFinPrevue,noteEntr,noteMA) VALUES (7,12,7,1,false,'2023-07-14','2023-10-06','2024-07-14',6,6);
+
 
 INSERT INTO SiteEntreprise(entreprise_id,site_id) VALUES(6,3);
 INSERT INTO SiteEntreprise(entreprise_id,site_id) VALUES(7,1);
@@ -244,6 +247,10 @@ INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VA
 INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (4,3,'2022-07-15','2024-01-01',NULL);
 INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (5,4,'2023-03-25','2024-04-01',NULL);
 INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (6,4,'2024-01-01','2026-01-01',NULL);
+INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (5,4,'2024-03-25','2025-04-01',NULL);
+INSERT INTO ContratVacataire(employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (6,4,'2025-01-01','2027-01-01',NULL);
+
+
 
 INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (1,22,12,'2020-01-29','2022-01-29',3);
 INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (5,25,13,'2020-03-14','2022-03-14',20);
@@ -254,3 +261,5 @@ INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateF
 INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (9,7,4,'2022-12-04','2024-12-04',NULL);
 INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (8,19,10,'2023-01-07','2025-01-07',NULL);
 INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (8,21,11,'2023-06-12','2025-06-12',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (8,21,11,'2024-06-12','2026-06-12',NULL);
+INSERT INTO ContratLabo (laboratoire_id,employe_id,entreprise_id,dateDebut,dateFin,note) VALUES (9,7,4,'2023-12-04','2025-12-04',NULL);
